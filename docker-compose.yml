@@ -1,6 +1,6 @@
 version : "3.3"
 services :
   web :
-     image : priyam14/django-app:$BUILD_NUMBER
+     image : priyam14/django-app:latest
      ports :
          - "8000:8000"
