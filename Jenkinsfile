@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    environment { sonar = tool "sonar"
+    environment { sonar = tool "sonarqube"
 }
     stages{
         stage("Clonnin the repo"){
