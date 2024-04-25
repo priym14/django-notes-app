@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    environment { sonar = tool "sonarqube"
+    environment { SONAR_HOME = tool "Sonar"
 }
     stages{
         stage("Clonnin the repo"){
@@ -10,8 +10,8 @@ pipeline {
         }
         stage("code check with sonarqube"){
             steps{
-                withSonarQubeEnv("sonar")
-                sh '''$sonar/bin/sonar-scanner \
+                withSonarQubeEnv("Sonar")
+                sh '''$SONAR_HOME/bin/sonar-scanner \
                 -Dsonar.projectName=django-notes-app \
                 _Dsoanr.projectKey=django-notes-app'''
             }
