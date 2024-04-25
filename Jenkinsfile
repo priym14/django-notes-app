@@ -17,6 +17,12 @@ pipeline {
             }
         }
         }
+        stage(){"Checking dependency using owasp")
+            steps{
+                dependencyCheck additionalArguments: "--scan ./", odcInstallation: "owasp"
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
         stage("Building the Docker image"){
             steps{
                 echo "Building the Docker image"
