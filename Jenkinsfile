@@ -10,11 +10,12 @@ pipeline {
         }
         stage("code check with sonarqube"){
             steps{
-                withSonarQubeEnv("sonarqube-scanner")
+                withSonarQubeEnv("sonarqube-scanner") {
                   sh '''$SONAR_SCANNER/bin/sonar-scanner \
                   -Dsonar.projectName=django-notes-app \
                   -Dsoanr.projectKey=django-notes-app'''
             }
+        }
         }
         stage("Building the Docker image"){
             steps{
