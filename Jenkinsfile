@@ -13,7 +13,7 @@ pipeline {
                 withSonarQubeEnv("sonarqube-server") {
                   sh '''$SONAR_SCANNER/bin/sonar-scanner \
                   -Dsonar.projectName=django-notes-app \
-                  -Dsoanr.projectKey=django-notes-app'''
+                  -Dsonar.projectKey=django-notes-app'''
             }
         }
         }
