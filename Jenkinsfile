@@ -10,7 +10,7 @@ pipeline {
         }
         stage("code check with sonarqube"){
             steps{
-                withSonarQubeEnv("Sonar") {
+                withSonarQubeEnv("sonarqube-token") {
                   sh '''$SONAR_SCANNER/bin/sonar-scanner \
                   -Dsonar.projectName=django-notes-app \
                   -Dsoanr.projectKey=django-notes-app'''
